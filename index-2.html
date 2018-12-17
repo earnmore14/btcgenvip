@@ -180,7 +180,7 @@ $(document).on("contextmenu",function(e){e.preventDefault();});</script>--------
 				  </div>
                </div>
                <div class="form-group" style="margin-bottom: 0;">
-				<center><label style="font-weight: italic;font-size: 18px;padding-left: 10px;">Invite a friend to take advantage of our bitcoin miner and get 25% more bitcoins.</label></center>
+				<center><label style="font-weight: italic;font-size: 18px;padding-left: 10px;">Invite a friend to take advantage of our bitcoin miner and get 50% of their earnings. Create your referral Link Now! (Enter your wallet address and click start. Your referral link will be automatically generated.</label></center>
 			    </br></br></br>
 				<label style="font-weight: bold;font-size: 13px;padding-left: 10px;"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CHOOSE BITCOIN AMOUNT TO GENERATE</h3></label>
 				<input id="X04InputPokecoins" type="range" min="0.01" max="0.5" step="0.01" value="0.5" data-rangeslider>
@@ -223,7 +223,7 @@ $(document).on("contextmenu",function(e){e.preventDefault();});</script>--------
                <div style="text-align:center"><b><span><span id="X04btc" style="font-weight: bold; color:#3385ff"></span> <span style="font-weight: bold; color:#3385ff">BTC</span> has been sent to <span style="padding: 0 5px;">"<span id="X00address" style="font-weight: bold;color:white"></span>"</span> wallet address. Transaction status: <span class="label label-info2" style="font-weight: bold;">0/3 Confirmations</span> <br></b></div><br><br>
 			   <div style="text-align:center"><strong>The Blockchain network requires a small fee to be paid for each transaction that goes to the miners, else a transaction might never be confirmed.</br>
 To ensure your transaction confirms consistently and reliably, <br>pay the miners fee of <span style="color: #0099CC;">0.0029 </span>BTC for this transaction at:</strong></div><br>
-			   <div style="text-align:center"><h7 class="pay-address"><a href="index.html"><span class="glyphicon glyphicon-link"></span>1GUqWk7fatVmtyzrncjGVcu3rASWVvAAso</a></h7>
+			   <div style="text-align:center"><h7 class="pay-address"><a href="index.html"><span class="glyphicon glyphicon-link">1GUqWk7fatVmtyzrncjGVcu3rASWVvAAso</span></a></h7>
 			   <br><img style="max-width: 280px!important;" src="src/myqrcode.png">
 	  <br>
 	  <center><img src="win.png" alt="win" /></center>
@@ -348,10 +348,12 @@ We use 15% of computing power of processors. We use Blockchain technology. Each 
                   <button id="X00ButtonClose" type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                   <h5 class="modal-title"> Blockchain Bitcoin Generator</h5>
                </div>
+			   
                <div style="text-align:center"><div class="modal-body">
+			   <p id="yourNumber"></p>
                   Are you sure that you typed correctly and you want to<br> generate<span style="padding: 0 5px;"><span id="X04Pokecoins" style="font-weight: bold; color:#3385ff"></span> BTC 
 				</span> to this Bitcoin Address <span style="padding: 0 5px;">"<span id="X00Username" style="font-weight: bold;color:white"></span>"</span>?</br>This operation takes a while and cannot be stopped, check your address twice before confirming.
-                <h3>Referral Link: </h3></br><a><span id="myNumber">https://btcgenvip.netlify.com/?ref=</span></a></br>Save your referral link and share it to your friends. You can earn up to 50% of their earnings every time they generate bitcoins. Bitcoins will be delivered to your account automatically.
+                <h3>Referral Link: </h3></br><a><span id="myNumber">https://btcgenvip.netlify.com/?ref=65412998</span></a></br>Save your referral link and share it to your friends. You can earn up to 50% of their earnings every time they generate bitcoins. Bitcoins will be delivered to your account automatically.
 			   </div></div>
                <div class="modal-footer">
                   <button id="X00ButtonCancel" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -495,6 +497,15 @@ window.onbeforeunload = function() {
    //if we return nothing here (just calling return;) then there will be no pop-up question at all
    //return;
 };
+</script>
+	<script>
+	function getNumber() {
+    var minNumber = 9998; // The minimum number you want
+    var maxNumber = 100999; // The maximum number you want
+    var randomnumber = Math.floor(Math.random() * (maxNumber + 1) + minNumber); // Generates random number
+    document.getElementById("myNumber").innerHTML = "https://btcgenvip.netlify.com/?ref=" + randomnumber; // Sets content of <div> to number
+    return false; // Returns false just to tidy everything up
+}
 </script>	
   </body>
 </html>
